@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link type="text/css" rel="stylesheet" media="all"
+	href="https://dev.twitter.com/sites/default/files/css/css_a99b5602a56178960dc5116518102eb5.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Read Me</title>
+</head>
+<body>
+	<div id="holder"
+		style="top: 50px; margin: 0px auto; position: absolute;">
+		<div id="header"
+			style="line-height: 51 px; position: absolute; text-align: center;">
+			<h1>REST API Version 1 for ForEver Application</h1>
+		</div>
+		<div class="view api-docs"
+			style="width: 900px; top: 80px; left: 150px; margin: 0px auto">
+			<div class="content">
+				<table class="views-table">
+					<caption>
+						<strong>Digital asset access</strong>
+						<p>Creation and access of Digital assets</p>
+					</caption>
+					<thead>
+						<tr>
+							<th class="views-field views-field-title">Resource</th>
+							<th class="views-field views-field-body">Description</th>
+						</tr>
+					<thead>
+					<tbody>
+						<tr class="odd views-row-first">
+							<td class="views-fiels views-field-title"><a href="#">GET
+									/api/v1/user/{id}</a></td>
+							<td class="views-fiels views-field-body">This is used to
+								retreive the information that is stored in the internal data
+								structure of the forever application. The userId is the unique
+								parameter that maps the user of digital asset.</td>
+						</tr>
+						<tr class="odd">
+							<td class="views-fiels views-field-title"><a href="#">POST
+									/api/v1/user/post</a></td>
+							<td class="views-fiels views-field-body">Not for invocation
+								by the application but invoked from the digital asset when a new
+								user is added to the application and the user has given consent
+								to use the forever application.</td>
+						</tr>
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">PUT
+									/api/v1/user/put</a></td>
+							<td class="views-fiels views-field-body">Not for invocation
+								by the application but invoked from the digital asset to forever
+								digital asset.</td>
+						</tr>
+						<tr class="odd">
+							<td class="views-fiels views-field-title"><a href="#">DELETE
+									/api/v1/user/delete/{id}</a></td>
+							<td class="views-fiels views-field-body">Not for inovcation
+								by the application but invoked from the digital asset when a
+								digital asset is deleted.</td>
+						</tr>
+					</tbody>
+				</table>
+				<table>
+					<caption>
+						<strong>ForEver application access</strong>
+						<p>Creation and access of contacts sharing through ForEver
+							Application</p>
+					</caption>
+					<thead>
+						<tr>
+							<th class="views-field views-field-title">Resource</th>
+							<th class="views-field views-field-body">Description</th>
+						</tr>
+					<thead>
+					<tbody>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">GET
+									/api/v1/user/fe/adduser/get/{id}</a></td>
+							<td class="views-fiels views-field-body">Returns the FE's
+								asset of the user with the level of contacts shared.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">POST
+									/api/v1/user/fe/adduser/post</a></td>
+							<td class="views-fiels views-field-body">Takes the FE's
+								assets they are feName, feUserList, feGroupList. The feUserList
+								has information about the users the contact information along
+								with the level of sharing. The feGroupList has information about
+								the group, the contact information with the level of sharing.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">PUT
+									/api/v1/user/fe/adduser/put</a></td>
+							<td class="views-fiels views-field-body">Takes the FE's
+								assets with the same data definition as that of POST. It removes
+								the already stored information of the FE's asset and replaces
+								with the request.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">DELETE
+									/api/v1/user/fe/adduser/delete/{id}</a></td>
+							<td class="views-fiels views-field-body">Deleted the FE's
+								asset of the user from the data structure.</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<table>
+					<caption>
+						<strong>ForEver application registration</strong>
+						<p>Authentication of application access.</p>
+					</caption>
+					<thead>
+						<tr>
+							<th class="views-field views-field-title">Resource</th>
+							<th class="views-field views-field-body">Description</th>
+						</tr>
+					<thead>
+					<tbody>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">GET
+									/api/v1/app/fe/addapp/get/{id}</a></td>
+							<td class="views-fiels views-field-body">Returns the FE's
+								token information used to share the application data.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">POST
+									/api/v1/app/fe/addapp/post</a></td>
+							<td class="views-fiels views-field-body">Takes the FE's
+								approval to obtain the digital asset information from DAG.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">PUT
+									/api/v1/app/fe/addapp/put</a></td>
+							<td class="views-fiels views-field-body">Takes the FE's
+								approval to obtain the digital asset information from DAG. It
+								removes the already stored information of the approval and
+								replaces with the current request.</td>
+						</tr>
+
+						<tr class="even">
+							<td class="views-fiels views-field-title"><a href="#">DELETE
+									/api/v1/app/fe/addapp/delete/{id}</a></td>
+							<td class="views-fiels views-field-body">Deleted the FE's
+								approval to obtain the digital asset information from DAG.</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

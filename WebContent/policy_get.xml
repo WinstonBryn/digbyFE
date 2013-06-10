@@ -1,0 +1,42 @@
+<Policy PolicyId="BankUseCasePolicy1" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:permit-overrides" xmlns="urn:oasis:names:tc:xacml:2.0:policy:schema:os">
+ 
+  <Rule Effect="Permit" RuleId="Rule_On_Admin_Read">
+    <Condition>
+      <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:and">
+        <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in">
+          <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">contacts_all</AttributeValue>
+          <ResourceAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+        </Apply>
+        <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-is-in">
+          <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">admin</AttributeValue>
+          <SubjectAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+        </Apply>
+      </Apply>
+    </Condition>
+  </Rule>
+
+  
+  <Rule Effect="Deny" RuleId="Deny_Rule"/>
+  
+  <Target>
+    <Environments>
+      <Environment>
+        <EnvironmentMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+          <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">v1/user/fe/adduser/admin/get/</AttributeValue>
+          <EnvironmentAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:environment:environment-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+        </EnvironmentMatch>
+      </Environment>
+    </Environments>
+   
+    <Actions>
+    <Action>
+	<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+	     <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">GET</AttributeValue>
+          <ActionAttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" DataType="http://www.w3.org/2001/XMLSchema#string"/>
+	</ActionMatch>
+	</Action>
+   </Actions>
+   
+   
+  </Target>
+</Policy>
