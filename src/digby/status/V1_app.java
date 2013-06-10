@@ -114,7 +114,7 @@ public class V1_app {
 			}
 
 		}
-		V1_status.digitalasset.clear();
+		V1_status.digitalasset=null;
 		System.out.println((Integer.parseInt(id)));
 	
 	}

@@ -47,7 +47,9 @@ public class V1_asset {
 		
 		V1_status.digitalasset=res.getAr();
 		*/
+		if(V1_status.digitalasset!=null){
 		V1_status.digitalasset.clear();
+		}
 		System.out.println(uf.getAr());
 		V1_status.digitalasset=uf.getAr();
 		return V1_status.digitalasset;
